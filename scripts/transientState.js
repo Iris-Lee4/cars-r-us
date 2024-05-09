@@ -2,7 +2,8 @@ const transientState = {
     "colorsId": 0,
     "interiorsId": 0,
     "wheelsId": 0,
-    "techsId": 0
+    "techsId": 0,
+    "vehicleTypesId": 0
 }
 
 //setter functions below
@@ -23,7 +24,10 @@ export const setTech = (chosenTech) => {
     transientState.techsId = chosenTech
     console.log(transientState)
 }
-
+export const setVehicleType = (chosenVehicleType) => {
+    transientState.vehicleTypesId = chosenVehicleType
+    console.log(transientState)
+}
 //add new object to database
 
 export const placeOrder = async () => {

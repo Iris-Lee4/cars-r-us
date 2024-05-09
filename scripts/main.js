@@ -4,6 +4,7 @@ import { interiorOptions } from "./interiors.js";
 import { techOptions } from "./tech.js";
 import { placeOrderButton } from "./orders.js";
 import { Orders } from "./orders.js";
+import { vehicleTypes } from "./vehicleTypes.js";
 
 const container = document.querySelector('#container');
 
@@ -14,6 +15,7 @@ const render = async () => {
     const techHTML = await techOptions();
     const orderButtonHTML = await placeOrderButton();
     const ordersHTML = await Orders();
+    const vehiclesHTML = await vehicleTypes();
 
     const containerHTML = `
     <h1>Cars 'R Us: Personal Car Builder</h1>
@@ -34,6 +36,9 @@ const render = async () => {
             <h2>Technologies</h2>
             ${techHTML}
             </section>
+    </article>
+    <article class="vehicleTypes">
+        ${vehiclesHTML}
     </article>
     <article class="orderButton">
         ${orderButtonHTML}
