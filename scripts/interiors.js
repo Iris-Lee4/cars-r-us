@@ -1,4 +1,4 @@
-import { setInterior} from "./transientState.js";
+import { setInterior } from "./transientState.js";
 
 const handleInteriorChange = (change) => {
     if(change.target.id === 'interiors') {

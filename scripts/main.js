@@ -3,6 +3,7 @@ import { colorOptions } from "./colors.js";
 import { interiorOptions } from "./interiors.js";
 import { techOptions } from "./tech.js";
 import { placeOrderButton } from "./orders.js";
+import { Orders } from "./orders.js";
 
 const container = document.querySelector('#container');
 
@@ -12,6 +13,7 @@ const render = async () => {
     const interiorHTML = await interiorOptions();
     const techHTML = await techOptions();
     const orderButtonHTML = await placeOrderButton();
+    const ordersHTML = await Orders();
 
     const containerHTML = `
     <h1>Cars 'R Us: Personal Car Builder</h1>
@@ -36,8 +38,16 @@ const render = async () => {
     <article class="orderButton">
         ${orderButtonHTML}
     </article>
+    <article class="orders">
+        <h2>Custom Car Orders</h2>
+        <section class="orders_list">
+        ${ordersHTML}
+        </section>
+    </article>
     `
     container.innerHTML = containerHTML;
 }
+
+document.addEventListener("newOrderCreated", render);
 
 render();
