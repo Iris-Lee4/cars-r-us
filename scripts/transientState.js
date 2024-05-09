@@ -36,6 +36,8 @@ export const placeOrder = async () => {
     }
     const response = await fetch("http://localhost:8088/orders", postOptions)
 
+    //add custom event to get orders to print as they come in
     const customEvent = new CustomEvent("newOrderCreated")
+    //dispatch to the document
     document.dispatchEvent(customEvent)
 }

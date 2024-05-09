@@ -47,7 +47,8 @@ const render = async () => {
     `
     container.innerHTML = containerHTML;
 }
-
+//listening to custom event that was added and will render each time
+//this is where the event was dispatched to
 document.addEventListener("newOrderCreated", render);
 
 render();
